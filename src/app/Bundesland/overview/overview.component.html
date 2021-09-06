@@ -1,0 +1,24 @@
+<div class="content">
+    <h1>Bundesländer</h1>
+    <ul id="states">
+        <a *ngFor="let state of stateList" [href]="state.url">
+            <li>
+                <div class="inner">
+                    <div class="state-name" [ngClass]="{'city-state': state.stadtStaat}">
+                        {{state.name}}
+                    </div>
+                    <div class="school-count">
+                        {{state.schoolCount}}
+                    </div>
+                </div>
+            </li>
+        </a>
+    </ul>
+    <ul id="persons">
+        <ng-container *ngFor="let person of personIndexCounts | keyvalue">
+
+            <li *ngIf="person.value > 0">{{person.key}}
+            </li>
+        </ng-container>
+    </ul>
+</div>
